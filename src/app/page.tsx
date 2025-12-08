@@ -1,8 +1,10 @@
-import React from 'react'
 import Link from 'next/link'
 import { ImGithub } from 'react-icons/im'
 import { MdMailOutline } from 'react-icons/md'
 import ProjectItem from '@/components/ProjectItem'
+
+import { TbExternalLink } from 'react-icons/tb'
+import { RiTeamLine } from 'react-icons/ri'
 
 export default function page() {
   const projects25H2 = [
@@ -23,11 +25,6 @@ export default function page() {
       desc: '웹서버보안프로그래밍 실습 3',
       github: 'https://github.com/seojin23/nextjs-shopping',
       vercel: 'https://nextjs-shopping-five.vercel.app',
-    },
-    {
-      name: 'classreview',
-      desc: '웹서버보안프로그래밍 팀프로젝트',
-      github: 'https://github.com/seojin23/classreview',
     },
   ]
 
@@ -86,12 +83,14 @@ export default function page() {
         </div>
         <div className="flex flex-row gap-1 items-center">
           <ImGithub />
-          <Link
+          <a
             href={'https://github.com/seojin23'}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:underline"
           >
             github.com/seojin23
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -107,6 +106,39 @@ export default function page() {
               vercel={project.vercel}
             />
           ))}
+          <li className="border-1 border-gray-600 p-3 pr-11 rounded-xl hover:shadow-lg flex flex-row items-center justify-between">
+            <a
+              href="https://github.com/seojin23/classreview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              <div>
+                <div className="flex flex-row items-center gap-2">
+                  <h2 className="font-bold text-xl">classreview</h2>
+                  <ImGithub size={18} />
+                </div>
+
+                <p>웹서버보안프로그래밍 팀프로젝트</p>
+              </div>
+            </a>
+            <div className="flex flex-row gap-3">
+              <Link href={'/team'}>
+                <div className="rounded-full p-1 hover:bg-gray-200 flex items-center justify-center">
+                  <RiTeamLine size={24} />
+                </div>
+              </Link>
+              <a
+                href="https://classreview-self.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="rounded-full p-1 hover:bg-gray-200 flex items-center justify-center">
+                  <TbExternalLink size={24} />
+                </div>
+              </a>
+            </div>
+          </li>
         </ul>
         <h3 className="font-bold text-xl">2025 H1</h3>
         <ul className="my-6 flex flex-col gap-6">
